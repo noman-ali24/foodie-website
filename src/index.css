@@ -1,0 +1,119 @@
+@layer theme, base, mui, components, utilities;
+@import "tailwindcss";
+
+@theme {
+  /* Brand Colors */
+  --color-primary: #FFB800;
+  --color-primary-light: #FFD04D;
+  --color-primary-dark: #E09F00;
+  --color-secondary: #FF7A00;
+  --color-secondary-light: #FF9838;
+  --color-secondary-dark: #E06800;
+
+  /* Text & Surface Colors */
+  --color-dark: #222222;
+  --color-body: #666666;
+  --color-muted: #8C8C8C;
+  --color-surface: #FFFFFF;
+  --color-cream: #FFF9ED;
+  --color-cream-strong: #FFF3D6;
+  --color-border-warm: #F2EADF;
+
+  /* Typography */
+  --font-heading: 'Poppins', 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+
+  /* Shadows */
+  --shadow-card: 0 10px 30px -5px rgba(34, 34, 34, 0.06);
+  --shadow-card-hover: 0 20px 40px -10px rgba(255, 122, 0, 0.16);
+  --shadow-floating: 0 16px 36px -4px rgba(34, 34, 34, 0.10);
+  --shadow-btn-primary: 0 8px 20px -4px rgba(255, 184, 0, 0.45);
+  --shadow-btn-secondary: 0 8px 20px -4px rgba(255, 122, 0, 0.38);
+}
+
+:root {
+  --color-primary: #FFB800;
+  --color-secondary: #FF7A00;
+  --color-text-dark: #222222;
+  --color-text-body: #666666;
+  --color-bg-white: #FFFFFF;
+  --color-bg-light: #FFF9ED;
+  --color-border-light: #F2EADF;
+  --radius-card: 24px;
+  --radius-input: 14px;
+  --radius-pill: 9999px;
+}
+
+@layer base {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    margin: 0;
+    min-height: 100vh;
+    background-color: var(--color-bg-white);
+    color: var(--color-text-body);
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin: 0;
+    font-family: var(--font-heading);
+    color: var(--color-text-dark);
+  }
+
+  img,
+  svg,
+  video {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+}
+
+@keyframes floatSlow {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.animate-float-slow {
+  animation: floatSlow 4s ease-in-out infinite;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
